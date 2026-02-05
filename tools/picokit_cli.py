@@ -63,7 +63,7 @@ def crc8(data: bytes) -> int:
 class Protocol:
     """Binary frame protocol over serial."""
 
-    def __init__(self, port: str, baudrate: int = 115200, timeout: float = 2.0):
+    def __init__(self, port: str, baudrate: int = 115200, timeout: float = 30.0):
         self.ser = serial.Serial(port, baudrate, timeout=timeout)
         time.sleep(2)  # wait for Pico USB CDC init
 

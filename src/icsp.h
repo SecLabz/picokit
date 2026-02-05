@@ -21,12 +21,12 @@ enum {
     ICSP_COMMAND_END_PROG_EXT    = 0x82,
 };
 
-/* Erase region bits for PIC18F27K42 */
+/* Erase region bits for PIC18F27K42 (per programming spec) */
 enum {
-    ICSP_ERASE_REGION_EEPROM  = (1 << 16),
-    ICSP_ERASE_REGION_FLASH   = 4,
-    ICSP_ERASE_REGION_USER_ID = 8,
-    ICSP_ERASE_REGION_CONFIG  = 16,
+    ICSP_ERASE_REGION_EEPROM  = (1 << 0),  // Bit 0: Data EEPROM
+    ICSP_ERASE_REGION_FLASH   = (1 << 1),  // Bit 1: Flash memory
+    ICSP_ERASE_REGION_USER_ID = (1 << 2),  // Bit 2: User ID memory
+    ICSP_ERASE_REGION_CONFIG  = (1 << 3),  // Bit 3: Configuration memory
 };
 
 void icsp_init(spi_inst_t *spi, int pin_mclr, int pin_dat, int pin_clk,
