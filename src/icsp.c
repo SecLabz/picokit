@@ -3,6 +3,7 @@
 #include <hardware/spi.h>
 #include <pico/time.h>
 
+// Credit: https://github.com/MCJack123/pico-icsp-programmer
 static int dataOutPin = PICO_DEFAULT_SPI_TX_PIN;
 static int dataInPin = PICO_DEFAULT_SPI_RX_PIN;
 static int clockPin = PICO_DEFAULT_SPI_SCK_PIN;
